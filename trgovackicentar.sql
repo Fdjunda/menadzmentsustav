@@ -62,3 +62,10 @@ create table ugovor(
     pocetaknajma datetime not null,
     krajnajma datetime
 );
+
+alter table djelatnik add foreign key (uloga) references uloga(sifra);
+alter table radninalog add foreign key (prostor) references prostor(sifra);
+alter table radninalog_djelatnik add foreign key (radninalog) references radninalog(sifra);
+alter table radninalog_djelatnik add foreign key (djelatnik) references djelatnik(sifra);
+alter table ugovor add foreign key (trgovina) references trgovina(sifra);
+alter table ugovor add foreign key (prostor) references prostor(sifra);
