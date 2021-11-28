@@ -29,3 +29,36 @@ create table radninalog(
     pocetak datetime not null,
     kraj datetime
 );
+
+create table radninalog_djelatnik(
+    sifra int not null primary key auto_increment,
+    radninalog int not null,
+    djelatnik int not null
+);
+
+create table prostor(
+    sifra int not null primary key auto_increment,
+    naziv varchar(50),
+    opis varchar(255),
+    povrsinaum2 int(5),
+    aktivan boolean
+);
+
+create table trgovina(
+    sifra   int not null primary key auto_increment,
+    naziv varchar(255) not null,
+    werbstranica varchar(255),
+    telefonskibroj varchar(10),
+    email varchar(50),
+    oib     char(11)
+);
+
+create table ugovor(
+    sifra int not null primary key auto_increment,
+    trgovina int not null,
+    prostor int not null,
+    sadrzaj text,
+    iznosnajma decimal(18,2),
+    pocetaknajma datetime not null,
+    krajnajma datetime
+);
