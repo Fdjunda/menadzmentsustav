@@ -7,7 +7,7 @@ create table djelatnik(
     ime varchar(50),
     prezime varchar(50),
     uloga int,
-    telefon varchar(10),
+    telefon varchar(12),
     email varchar(50),
     oib char(11),
     iban varchar(50),
@@ -25,7 +25,7 @@ create table radninalog(
     sifra int not null primary key auto_increment,
     naziv varchar(50),
     prostor int not null,
-    opis text,
+    opis varchar(255),
     pocetak datetime not null,
     kraj datetime
 );
@@ -47,10 +47,10 @@ create table prostor(
 create table trgovina(
     sifra   int not null primary key auto_increment,
     naziv varchar(255) not null,
-    werbstranica varchar(255),
-    telefonskibroj varchar(10),
+    webstranica varchar(255),
+    telefon varchar(12),
     email varchar(50),
-    oib     char(11)
+    oib char(11)
 );
 
 create table ugovor(
